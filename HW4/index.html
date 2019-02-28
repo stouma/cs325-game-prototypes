@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Delivery!</title>
+    <script src="js/phaser.js"></script>
+    <script src="js/Boot.js"></script>
+    <script src="js/Preloader.js"></script>
+    <script src="js/MainMenu.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/Win.js"></script>
+    <script src="js/GameOver.js"></script>
+    <script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Delivery!</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+What was the easiest or hardest part of making it?
+<ul>
+    <li> I learned how to load a JSON file in Phaser, how to create multiple game states, how to implement my own mechanics, and how to load an animation</li>
+    <li> The easiest part was the art, the hardest part was getting the JSON file and game states to work</li>
+</ul>
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+	<li>Player/Letter/Mailbox sprites: Original</li>
+    <li>Victory CG: Original</li>
+	<li>Sky: <a href="https://opengameart.org/content/sky-backdrop">Sky</a></li>
+	<li>Tileset: <a href="https://guardian5.itch.io/row-house-tile-set">Row House Tileset</a></li>
+	<li>BG Music by syncopika: <a href="https://opengameart.org/content/happy-tune">Happy Tune</a></li>
+    <li>Paper sound effect: <a href="https://freesound.org/people/nsstudios/sounds/321108/">Page Turn</a></li>
+    <li>Play Button by Victor Kunai: <a href="https://opengameart.org/content/play-letters">Play Letters</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+	<li>Borrowed code from Phaser tutorial for movement: <a href="https://github.com/photonstorm/phaser-ce/tree/master/resources/tutorials">Phaser tutorial</a></li>
+	<li>Borrowed code from Phaser example for loading tilemap and camera: <a href="https://phaser.io/examples/v2/tilemaps/fill-tiles">Fill Tiles</a></li>
+	<li>Borrowed code from Phaser example for fixed to camera: <a href="https://phaser.io/examples/v2/camera/fixed-to-camera">Fixed To Camera</a></li>
+    <li>Borrowed code from template-gamestate-functional to create game states: <a href="https://github.com/GMU-CS325/cs325-game-prototypes/tree/master/template-gamestate-functional/js">Game States Template</a></li>
+    <li>Borrowed code for making gamestates: <a href="http://perplexingtech.weebly.com/game-dev-blog/using-states-in-phaserjs-javascript-game-developement">Using States in Phaser</a></li>
+    <li>Borrowed code from Phaser example for timer: <a href="https://phaser.io/examples/v2/time/custom-timer">Custom Timer</a></li>
+    <li>Borrowed code from Phaser example for animation: <a href="https://phaser.io/examples/v2/basics/05-load-an-animation">Load an Animation</a></li>
+    <li>Changes:
+        <ul>
+            <li>Added in mechanics for delivering the letters</li>
+            <li>Added in a timer</li>
+            <li>More gamestates, including a Win state and a Game Over State</li>
+            <li>More sprites and art</li>
+            <li>Sound effects</li>
+        </ul>
+    </li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+<ul>
+    <li>Deliver the letters according to the colors of the houses before time runs out.</li>
+</ul>
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+<ul>
+    <li> Letters are returned </li>
+</ul>
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+    <li>Input: Keyboard</li>
+    <li>Genre: Adventure</li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+<ul>
+    <li>Game states, mechanics involving the JSON tilemap, and events upon overlap between objects.</li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+<ul>
+    <li> Control the player with the arrow keys to move left or right</li>
+    <li>Deliver the letters to each house according to color by pressing the UP arrow key on a mailbox. However, you can only deliver to each house once.
+        <ul>
+            <li>A visited house is indicated by the flag raised on the house's mailbox</li>
+        </ul>
+    </li>
+    <li>If time runs out, it's game over.</li>
+</ul>
+</li>
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+<ul>
+    <li>Keep moving constantly to make sure you deliver all letters on time.</li>
+</ul>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+<ul>
+    <li>Aimed towards casual players</li>
+</ul>
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+<ul>
+    <li>30 seconds</li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+</body>
+</html>
