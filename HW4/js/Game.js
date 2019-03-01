@@ -33,12 +33,14 @@ GameStates.makeGame = function( game, shared ) {
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
 
         //  Then let's go back to the main menu.
+        music.stop();
         game.state.start('Win');
 
     }
 
     function gameOver(){
 
+        music.stop();
         game.state.start('GameOver');
     }
 
