@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Phaser Basic Project Template</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/MimicMayhem.js"></script>
+	<script src="js/DancingDrake.js"></script>
+	<script src="js/Win.js"></script>
+	<script src="js/GameOver.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>The Reluctant Hero</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+<ul>
+	<li>Different way of battling monsters through challenges.</li>
+</ul>
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+What was the easiest or hardest part of making it?
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+	<li>Sky background: <a href="https://opengameart.org/content/sky-background">Sky Background</a></li>
+	<li>Slime sprite: <a href="https://www.spriters-resource.com/ds_dsi/dqheroesrocket/sheet/22127/?source=genre">Dragon Quest Slime</a></li>
+	<li>Player sprite by sicklyseraph: <a href="https://sicklyseraph.itch.io/jeremy-and-martha">RPG sprites</a></li>
+	<li>Forest Tileset: <a href="https://forums.rpgmakerweb.com/index.php?threads/marus-mv-bits.46811/">Maru's Resource-Collection</a></li>
+	<li>Title, field, mimic music & health bar: <a href="http://www.rpgmakerweb.com/download/additional">IG Maker Free Resources Pack</a></li>
+	<li>Mimic sprite by Grafikal: <a href="http://rmrk.net/index.php?topic=31124.0">VX Enemy Sprites</a></li>
+	<li>Forest Background: <a href="https://opengameart.org/content/forest-background-art-2">Forest Background Art 2</a></li>
+	<li>Gems sprite by Clint Bellanger: <a href="https://opengameart.org/content/gem-icons">Gem Icons</a></li>
+	<li>Arrow sprites: <a href="https://www.gdunlimited.net/forums/gallery/image/5426-neon-arrow-sign-b-v2/">Neon Arrow Sign Objects</a></li>
+	<li>Dancing Drake Music: <a href="https://soundcloud.com/anamanaguchi/meow-1">Meow by Anamanaguchi</a></li>
+	<li>Dragon sprite by Nightly: <a href="https://forums.rpgmakerweb.com/index.php?threads/grannys-lists-vx-ace-animal-sprites.30456/">Animal Sprite Compilation</a></li>
+	<li>Bell sound effect: <a href="https://freesound.org/people/GowlerMusic/sounds/265458/">Sleigh Bells Sound Effect</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+	<li>Iterating on Digital Assignment 6</li>
+	<li>Follower code reference: <a href="https://gamemechanicexplorer.com/#follow-1">Game Mechanic Explorer: Following</a></li>
+	<li>Tweening code: <a href="https://phaser.io/examples/v2/tweens/chained-tweens">Chained Tweens</a></li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+<ul>
+	<li>The Reluctant Hero is a fantasy RPG where instead of fighting monsters directly, you have to beat their challenges to defeat them.</li>
+</ul>
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+<ul>
+	<li>Implementing a few different kinds of mini-games to work as the challenges.</li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+<ul>
+	<li>Implementing a few different kinds of mini-games to work as the challenges.</li>
+</ul>
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+<ul>
+	<li>Use WASD keys to move around. When in battle, each kind of challenge will have different rules on how to play. (Currently)To beat the game, you must defeat all monsters on screen. Losing once results in a game over.
+		<ul>
+			<li>Mimic Mayhem: after the shuffling, the player must click on the correct treasure chest with the gems to win. Choosing the wrong one results in a loss.</li>
+			<li>Dancing Drake: use arrow keys to input the right arrow key on time when overlapping with the arrows at the top. If health falls below 0, you lose. If you get through the song, you win.</li>
+		</ul>
+	</li>
+</ul>
+</li>
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+<ul>
+	<li>After playing through the same kinds of challenges multiple times, the player will learn how they work and get through them more easily.</li>
+</ul>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+<ul>
+	<li>The setting takes place in a fantasy world where monsters, magic, and other fantasy-like elements exist. The story begins in a humble village by the forest where our main character lives. One day, when he is in the forest, he stumbles upon a strange-looking slime that was unconscious. The slime suddenly wakes up and upon seeing the MC, says, “You must be the hero I am looking for!” Through much deliberation, the MC reluctantly takes on the hero role and with the slime that has no other memories, they journey to save the world(?). However, what the hero did know is that in this world, monsters cannot directly fight people due to a curse and so they fight through challenges instead.</li>
+</ul>
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+<ul>
+	<li>Aimed towards those who enjoy RPGs and a single-player experience with a story.</li>
+</ul>
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+<ul>
+	<li>(Tentative) 5 minutes</li>
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>
